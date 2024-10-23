@@ -1,0 +1,14 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure that the body and the main container don't overflow */
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Ensure the main container covers 100% of the viewport width */
+.container {
+  width: 100%;
+}
