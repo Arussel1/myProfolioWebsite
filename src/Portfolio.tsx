@@ -1,6 +1,11 @@
 import  { useState } from 'react';
 import { Github, ExternalLink, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Avatar from '/avatar.png'
+import { FaReact, FaPython, FaJava, FaLinux, FaCog, FaUserFriends } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiCplusplus, SiMongodb, SiTailwindcss, SiSpring, SiHtml5, SiCss3, SiNodedotjs, SiExpress, SiGithubactions, SiAmazonwebservices, SiJira } from 'react-icons/si';
+import { DiPostgresql } from 'react-icons/di';
+import { AiFillGitlab } from 'react-icons/ai';
 interface FormErrors {
     name?: string;
     email?: string;
@@ -20,39 +25,55 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "MERN Blog",
-      description: "Full-stack blog platform built with MERN stack",
-      image: "/api/placeholder/400/250",
-      tags: ["MongoDB", "Express", "React", "Node.js"],
-      github: "#",
-      demo: "#"
+      title: "Personal Blog",
+      description: "Full-stack blog platform built with PERN stack",
+      image: "/personalBlog.png",
+      tags: ["PostgreSQL", "Express", "React", "Node.js", "Typescript", "TailwindCSS", "REST API", "PrismaORM"],
+      github: "https://github.com/Arussel1/blogAPI",
+      demo: "https://blog-client-rose.vercel.app"
     },
     {
-      title: "Portfolio Website",
-      description: "Personal portfolio built with React and Tailwind",
-      image: "/api/placeholder/400/250",
-      tags: ["React", "TypeScript", "Tailwind"],
-      github: "#",
-      demo: "#"
+      title: "Message Board",
+      description: "Small backend web application built using Java/Spring Boot and PostgreSQL",
+      image: "/messageBoard.png",
+      tags: ["Java", "Spring Boot", "Thymeleaf", "PostgreSQL"],
+      github: "https://github.com/Arussel1/messageBoard",
+      demo: "https://messageboard111-ac85598e9130.herokuapp.com"
     },
     {
-      title: "Task Manager",
-      description: "Simple task management application",
-      image: "/api/placeholder/400/250",
-      tags: ["React", "Firebase", "Tailwind"],
-      github: "#",
-      demo: "#"
+      title: "Cloud storage",
+      description: "Backend cloud storage web app inspired from having a personal Google Drive",
+      image: "/cloudStorage.png",
+      tags: ["Pug.js", "Node.js", "Express", "Supabase", "PostgreSQL", "PrismaORM"],
+      github: "https://github.com/Arussel1/simplified-google-drive",
+      demo: "https://simplified-google-drive.onrender.com/login"
     }
   ];
 
   const skills = [
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "📦" },
-    { name: "TypeScript", icon: "🔷" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "Python", icon: "🐍" },
-    { name: "Docker", icon: "🐋" }
+    { name: "Python", icon: <FaPython className='mx-auto' color="#306998" /> },
+    { name: "JavaScript", icon: <SiJavascript className='mx-auto' color="#F7DF1E" /> },
+    { name: "TypeScript", icon: <SiTypescript className='mx-auto' color="blue" /> },
+    { name: "C++", icon: <SiCplusplus className='mx-auto' color="#00599C" /> },
+    { name: "Java", icon: <FaJava className='mx-auto' color="#007396" /> },
+    { name: "SQL (PostgreSQL)", icon: <DiPostgresql className='mx-auto' color="#336791" /> },
+    { name: "HTML", icon: <SiHtml5 className='mx-auto' color="#E34F26" /> },
+    { name: "CSS", icon: <SiCss3 className='mx-auto' color="#1572B6" /> },
+    { name: "React.js", icon: <FaReact className='mx-auto' color="cyan" /> },
+    { name: "Node.js", icon: <SiNodedotjs className='mx-auto' color="green" /> },
+    { name: "Express.js", icon: <SiExpress className='mx-auto' color="black" /> },
+    { name: "MongoDB", icon: <SiMongodb className='mx-auto' color="green" /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss className='mx-auto' color="#38B2AC" /> },
+    { name: "Spring Boot", icon: <SiSpring className='mx-auto' color="#6DB33F" /> },
+    { name: "AWS", icon: <SiAmazonwebservices className='mx-auto' color="gray" /> },
+    { name: "Git", icon: <AiFillGitlab className='mx-auto' color="#F05032" /> },
+    { name: "Linux", icon: <FaLinux className='mx-auto' color="black" /> },
+    { name: "Jira", icon: <SiJira className='mx-auto' color="#0052CC" /> },
+    { name: "SDLC", icon: <FaCog className='mx-auto' color="gray" /> }, // Generic cog icon for SDLC
+    { name: "Agile", icon: <FaUserFriends className='mx-auto' color="orange" /> }, // Generic icon for Agile
+    { name: "CI/CD (GitHub Actions)", icon: <SiGithubactions className='mx-auto' color="#2088FF" /> } // GitHub Actions icon
   ];
+  
 
   const validateForm = () => {
     const errors:FormErrors = {};
@@ -78,7 +99,7 @@ const Portfolio = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-sm`}>
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-xl font-bold">Daniel</h1>
+            <h1 className="text-xl font-bold">Noal</h1>
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -97,10 +118,10 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-4xl font-bold mb-4">Hi, I am Noal Le</h1>
-              <h2 className="text-xl mb-2">Web developer</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Hi, I’m Nhat Anh Le, a passionate and versatile full stack developer. With a strong foundation in web development and a focus on creating robust, user-friendly applications.
+              <h1 className="text-4xl font-bold mb-4 typing-text">Hi, I am Noal Le</h1>
+              <h2 className="text-xl mb-2 ">Web developer</h2>
+              <p className="text-gray-600 dark:text-gray-800 mb-6">
+              Hi, I’m Noal, a passionate full stack developer. With a strong foundation in web development and a focus on creating robust, user-friendly applications.
               </p>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
@@ -112,7 +133,7 @@ const Portfolio = () => {
             </div>
             <div className="md:w-1/2 flex justify-center">
               <div className="w-64 h-64 bg-yellow-300 rounded-full overflow-hidden">
-                <img src="/api/placeholder/256/256" alt="Profile" className="w-full h-full object-cover" />
+                <img src={Avatar} alt="Profile" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
