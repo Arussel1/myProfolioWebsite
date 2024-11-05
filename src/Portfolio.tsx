@@ -1,5 +1,5 @@
 import  { useState } from 'react';
-import { Github, ExternalLink, Moon, Sun } from 'lucide-react';
+import { Github, ExternalLink, Moon, Sun,  } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Avatar from '/avatar.png'
 import { FaReact, FaPython, FaJava, FaLinux, FaCog, FaUserFriends } from 'react-icons/fa';
@@ -47,6 +47,13 @@ const Portfolio = () => {
       tags: ["Pug.js", "Node.js", "Express", "Supabase", "PostgreSQL", "PrismaORM"],
       github: "https://github.com/Arussel1/simplified-google-drive",
       demo: "https://simplified-google-drive.onrender.com/login"
+    },
+    {
+      title: "File Organizer",
+      description: "A Python script that automates file organization by sorting and categorizing files into designated folders based on their extensions",
+      image: "/fileOrganizer.png",
+      tags: ["Python", "Scripting", "GUI"],
+      github: "https://github.com/Arussel1/fileOrganizer"
     }
   ];
 
